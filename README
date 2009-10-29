@@ -1,0 +1,69 @@
+eog-plugins
+------------------------------------------
+A collection of plugins for the Eye of GNOME image viewer.
+
+Runtime requirements:
+  cygwin-1.7.0-62
+  eog-2.28.1-1
+  libcairo2-1.8.8-1
+  libchamplain-gtk0.4_0-0.4.0-1
+  libchamplain0.4_0-0.4.0-1
+  libclutter-gtk0.10_0-0.10.2-1
+  libclutter1.0_0-1.0.8-1
+  libexif12-0.6.17-10
+  libgcc1-4.3.4-1
+  libgconf2_4-2.28.0-1
+  libgdk_pixbuf2.0_0-2.18.3-1
+  libglib2.0_0-2.22.2-1
+  libgtk2.0_0-2.18.3-1
+  libintl8-0.17-11
+  python-2.5.4-10
+  python-gobject2.0-2.20.0-1
+  python-gtk2.0-2.16.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.63-10
+  automake1.11-1.11-10
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-1
+  gnome-common-2.28.0-1
+  libtool-2.2.7a-14
+  make-3.81-2
+  pkg-config-0.23b-10
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.gnome.org/
+
+Canonical download:
+  ftp://ftp.gnome.org/pub/GNOME/sources/eog-plugins/
+
+-------------------------------------------
+
+Build instructions:
+  unpack eog-plugins-2.28.1-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./eog-plugins-2.28.1-X.cygport all
+
+This will create:
+  /usr/src/eog-plugins-2.28.1-X-src.tar.bz2
+  /usr/src/eog-plugins-2.28.1-X.tar.bz2
+
+For a list of files included in the binary package, run from the 
+command-line: 'cygcheck -l eog-plugins'.
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 2.28.1-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
