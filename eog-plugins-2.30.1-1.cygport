@@ -1,0 +1,4 @@
+inherit gnome2
+
+
+PATCH_URI="2.30-no-undefined.patch"
