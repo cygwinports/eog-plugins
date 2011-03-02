@@ -1,4 +1,4 @@
 category: Graphics Gnome
-requires: eog libcairo2 libchamplain-gtk0.4_0 libchamplain0.4_0 libclutter-gtk0.10_0 libclutter1.0_0 libexif12 libgcc1 libgconf2_4 libgdata7 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libintl8 python python-gobject2.0 python-gtk2.0
+requires: eog libcairo2 libchamplain-gtk0.8_0 libchamplain0.8_0 libclutter-gtk0.10_0 libclutter1.0_0 libexif12 libgconf2_4 libgdata7 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libintl8 python python-gobject2.0 python-gtk2.0
 sdesc: "Eye of GNOME image viewer plugins"
 ldesc: "A collection of plugins for the Eye of GNOME image viewer."
