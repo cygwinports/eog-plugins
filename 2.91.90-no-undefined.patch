@@ -1,0 +1,52 @@
+--- origsrc/eog-plugins-2.91.90/configure.ac	2011-04-17 04:31:00.826340400 -0500
++++ src/eog-plugins-2.91.90/configure.ac	2011-04-17 02:32:39.159148300 -0500
+@@ -46,6 +46,7 @@ PKG_CHECK_MODULES([EOG], [
+ 	glib-2.0 >= 2.26.0
+ 	gtk+-3.0 >= 2.99.3
+ 	libpeas-1.0 >= 0.7.4
++	libpeas-gtk-1.0 >= 0.7.4
+ 	eog >= 2.91.92
+ ])
+ AC_SUBST(EOG_LIBS)
+@@ -307,7 +308,7 @@ AC_SUBST([BUILD_PLUGINS],[$PLUGINS])
+ # ****
+ AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
+ 
+-PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
++PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined"
+ AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
+ 
+ AC_CONFIG_FILES([
+--- origsrc/eog-plugins-2.91.90/plugins/exif-display/Makefile.am	2011-04-17 04:31:00.832340800 -0500
++++ src/eog-plugins-2.91.90/plugins/exif-display/Makefile.am	2011-04-17 01:31:07.000000000 -0500
+@@ -19,7 +19,7 @@ libexif_display_la_SOURCES = \
+ 	eog-exif-display-plugin-setup.h
+ 
+ libexif_display_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ libexif_display_la_LIBADD = $(EOG_LIBS)			\
+ 	$(EXIFDISPLAY_LIBS)
+--- origsrc/eog-plugins-2.91.90/plugins/fit-to-width/Makefile.am	2011-04-17 04:31:00.840341200 -0500
++++ src/eog-plugins-2.91.90/plugins/fit-to-width/Makefile.am	2011-04-17 01:31:07.000000000 -0500
+@@ -14,7 +14,7 @@ libfit_to_width_la_SOURCES = \
+ 	eog-fit-to-width-plugin.c
+ 
+ libfit_to_width_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ libfit_to_width_la_LIBADD = $(EOG_LIBS)
+ 
+--- origsrc/eog-plugins-2.91.90/plugins/send-by-mail/Makefile.am	2011-04-17 04:31:00.844341500 -0500
++++ src/eog-plugins-2.91.90/plugins/send-by-mail/Makefile.am	2011-04-17 01:31:07.000000000 -0500
+@@ -14,7 +14,7 @@ libsend_by_mail_la_SOURCES = \
+ 	eog-send-by-mail-plugin.c
+ 
+ libsend_by_mail_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ libsend_by_mail_la_LIBADD = $(EOG_LIBS)
+ 
