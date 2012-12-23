@@ -1,0 +1,11 @@
+inherit gnome2 python
+
+NAME="eog-plugins"
+VERSION=3.6.1
+RELEASE=1
+CATEGORY="Graphics GNOME"
+SUMMARY="Eye of GNOME image viewer plugins"
+DESCRIPTION="A collection of plugins for the Eye of GNOME image viewer."
+REQUIRES="girepository-Gtk3.0 girepository-Peas1.0"
+
+PATCH_URI="3.6.1-no-undefined.patch"

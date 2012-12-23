@@ -1,0 +1,74 @@
+--- origsrc/eog-plugins-3.6.1/configure.ac	2012-10-03 07:12:34.000000000 -0500
++++ src/eog-plugins-3.6.1/configure.ac	2012-12-22 21:41:09.491328900 -0600
+@@ -46,6 +46,7 @@ PKG_CHECK_MODULES([EOG], [
+ 	glib-2.0 >= 2.26.0
+ 	gtk+-3.0 >= 2.99.3
+ 	libpeas-1.0 >= 0.7.4
++	libpeas-gtk-1.0 >= 0.7.4
+ 	eog >= 3.5.5
+ ])
+ AC_SUBST(EOG_LIBS)
+@@ -322,7 +323,7 @@ AC_SUBST([BUILD_PLUGINS],[$PLUGINS])
+ # ****
+ AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
+ 
+-PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
++PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined"
+ AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
+ 
+ EOG_PLUGINS_LIBS_DIR="$libdir/eog/plugins"
+--- origsrc/eog-plugins-3.6.1/plugins/exif-display/Makefile.am	2012-02-25 06:08:29.000000000 -0600
++++ src/eog-plugins-3.6.1/plugins/exif-display/Makefile.am	2012-12-22 21:41:09.640337400 -0600
+@@ -20,7 +20,7 @@ libexif_display_la_SOURCES = \
+ 	eog-exif-display-plugin-setup.h
+ 
+ libexif_display_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ libexif_display_la_LIBADD = $(EOG_LIBS)			\
+ 	$(EXIFDISPLAY_LIBS)
+--- origsrc/eog-plugins-3.6.1/plugins/fit-to-width/Makefile.am	2012-02-25 06:08:29.000000000 -0600
++++ src/eog-plugins-3.6.1/plugins/fit-to-width/Makefile.am	2012-12-22 21:41:09.735342900 -0600
+@@ -14,7 +14,7 @@ libfit_to_width_la_SOURCES = \
+ 	eog-fit-to-width-plugin.c
+ 
+ libfit_to_width_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ libfit_to_width_la_LIBADD = $(EOG_LIBS)
+ 
+--- origsrc/eog-plugins-3.6.1/plugins/hide-titlebar/Makefile.am	2012-08-12 08:18:52.000000000 -0500
++++ src/eog-plugins-3.6.1/plugins/hide-titlebar/Makefile.am	2012-12-22 21:49:39.265486300 -0600
+@@ -14,7 +14,7 @@ libhide_titlebar_la_SOURCES = \
+ 	eog-hide-titlebar-plugin.c
+ 
+ libhide_titlebar_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ libhide_titlebar_la_LIBADD = $(EOG_LIBS)
+ 
+--- origsrc/eog-plugins-3.6.1/plugins/light-theme/Makefile.am	2012-08-12 08:36:18.000000000 -0500
++++ src/eog-plugins-3.6.1/plugins/light-theme/Makefile.am	2012-12-22 21:52:36.584628400 -0600
+@@ -14,7 +14,7 @@ liblight_theme_la_SOURCES = \
+ 	eog-light-theme-plugin.c
+ 
+ liblight_theme_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ liblight_theme_la_LIBADD = $(EOG_LIBS)
+ 
+--- origsrc/eog-plugins-3.6.1/plugins/send-by-mail/Makefile.am	2012-02-25 06:08:29.000000000 -0600
++++ src/eog-plugins-3.6.1/plugins/send-by-mail/Makefile.am	2012-12-22 21:41:09.942354700 -0600
+@@ -14,7 +14,7 @@ libsend_by_mail_la_SOURCES = \
+ 	eog-send-by-mail-plugin.c
+ 
+ libsend_by_mail_la_LDFLAGS = \
+-	-avoid-version -module
++	$(PLUGIN_LIBTOOL_FLAGS)
+ 
+ libsend_by_mail_la_LIBADD = $(EOG_LIBS)
+ 

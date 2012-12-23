@@ -1,6 +1,0 @@
-inherit gnome2
-
-
-PATCH_URI="2.91.90-no-undefined.patch"
-
-KEEP_LA_FILES="none"
