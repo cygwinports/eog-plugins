@@ -2,7 +2,7 @@ inherit gnome2 python3
 
 NAME="eog-plugins"
 VERSION=3.14.2
-RELEASE=1
+RELEASE=2
 CATEGORY="Graphics GNOME"
 SUMMARY="Eye of GNOME image viewer plugins"
 DESCRIPTION="A collection of plugins for the Eye of GNOME image viewer."
